@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krushisagar - Spiritual Agricultural Solutions | Seeds, Fertilizers & More</title>
+    <meta name="description" content="Krushisagar offers premium agricultural products including seeds, fertilizers, pesticides, and anticides with spiritual approach to farming. Organic and sustainable solutions for modern agriculture.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Sanskrit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> +91 9876543210</span>
+                    <span><i class="fas fa-envelope"></i> info@krushisagar.com</span>
+                </div>
+                <div class="header-actions">
+                    <button class="auth-btn" onclick="openLoginModal()">
+                        <i class="fas fa-user"></i> Login/Register
+                    </button>
+                    <div class="cart-icon" onclick="toggleCart()">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="header-main">
+                <div class="logo">
+                    <h1>🌱 कृषिसागर</h1>
+                    <p>Krushisagar</p>
+                </div>
+                
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#home" class="nav-link active">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#products" class="nav-link">Products <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-menu">
+                                <a href="#seeds">Seeds</a>
+                                <a href="#fertilizers">Fertilizers</a>
+                                <a href="#pesticides">Pesticides</a>
+                                <a href="#anticides">Anticides</a>
+                                <a href="#organic">Organic Products</a>
+                            </div>
+                        </li>
+                        <li><a href="#consultation" class="nav-link">Consultation</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="Search products..." id="searchInput">
+                    <button type="button" onclick="searchProducts()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="spiritual-quote">
+                <p class="sanskrit">"अन्नं ब्रह्म रसो विष्णुः"</p>
+                <p class="translation">Food is Brahma, Taste is Vishnu</p>
+            </div>
+            <h2>Welcome to Krushisagar</h2>
+            <p>Your trusted partner in spiritual and sustainable agriculture. Premium seeds, organic fertilizers, and eco-friendly solutions for abundant harvests.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToProducts()">
+                    <i class="fas fa-seedling"></i> Explore Products
+                </button>
+                <button class="btn btn-secondary" onclick="scrollToConsultation()">
+                    <i class="fas fa-comments"></i> Get Consultation
+                </button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="floating-elements">
+                <div class="element leaf">🌿</div>
+                <div class="element seed">🌱</div>
+                <div class="element flower">🌸</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <h3>Premium Seeds</h3>
+                    <p>High-quality, certified seeds for maximum yield and healthy crops</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Organic Fertilizers</h3>
+                    <p>Natural and organic fertilizers for sustainable farming practices</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Safe Protection</h3>
+                    <p>Eco-friendly pesticides and anticides for crop protection</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧘‍♂️</div>
+                    <h3>Spiritual Approach</h3>
+                    <p>Farming with devotion and respect for Mother Earth</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Products</h2>
+                <p>Discover our range of premium agricultural solutions</p>
+            </div>
+            
+            <div class="product-categories">
+                <button class="category-btn active" data-category="all">All Products</button>
+                <button class="category-btn" data-category="seeds">Seeds</button>
+                <button class="category-btn" data-category="fertilizers">Fertilizers</button>
+                <button class="category-btn" data-category="pesticides">Pesticides</button>
+                <button class="category-btn" data-category="anticides">Anticides</button>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Section -->
+    <section id="consultation" class="consultation">
+        <div class="container">
+            <div class="consultation-content">
+                <div class="consultation-info">
+                    <h2>Expert Agricultural Consultation</h2>
+                    <p>Get personalized advice from our experienced agricultural experts. We provide guidance on crop selection, soil management, pest control, and sustainable farming practices.</p>
+                    
+                    <div class="consultation-features">
+                        <div class="feature">
+                            <i class="fas fa-user-tie"></i>
+                            <div>
+                                <h4>Expert Advisors</h4>
+                                <p>Certified agricultural specialists with years of experience</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-video"></i>
+                            <div>
+                                <h4>Online & Offline</h4>
+                                <p>Video calls, phone consultations, and field visits available</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>24/7 Support</h4>
+                                <p>Round-the-clock assistance for urgent agricultural queries</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="consultation-form">
+                    <h3>Book Your Consultation</h3>
+                    <form id="consultationForm">
+                        <div class="form-group">
+                            <label for="farmerName">Full Name</label>
+                            <input type="text" id="farmerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="farmerPhone">Phone Number</label>
+                            <input type="tel" id="farmerPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="farmerEmail">Email Address</label>
+                            <input type="email" id="farmerEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="farmSize">Farm Size (in acres)</label>
+                            <input type="number" id="farmSize" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cropType">Crop Type</label>
+                            <select id="cropType" required>
+                                <option value="">Select Crop Type</option>
+                                <option value="rice">Rice</option>
+                                <option value="wheat">Wheat</option>
+                                <option value="cotton">Cotton</option>
+                                <option value="sugarcane">Sugarcane</option>
+                                <option value="vegetables">Vegetables</option>
+                                <option value="fruits">Fruits</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="consultationType">Consultation Type</label>
+                            <select id="consultationType" required>
+                                <option value="">Select Type</option>
+                                <option value="phone">Phone Call</option>
+                                <option value="video">Video Call</option>
+                                <option value="field">Field Visit</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="preferredDate">Preferred Date</label>
+                            <input type="date" id="preferredDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="query">Your Query</label>
+                            <textarea id="query" rows="4" placeholder="Describe your agricultural concerns or questions..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-calendar-check"></i> Book Consultation
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Shopping Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Your cart is empty</p>
+                <button class="btn btn-primary" onclick="scrollToProducts()">Start Shopping</button>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-total">
+                <strong>Total: ₹<span id="cartTotal">0</span></strong>
+            </div>
+            <button class="btn btn-primary btn-full" onclick="proceedToCheckout()">
+                <i class="fas fa-credit-card"></i> Proceed to Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- Login/Register Modal -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="authTitle">Login to Krushisagar</h3>
+                <button class="close-modal" onclick="closeLoginModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" onclick="switchAuthTab('login')">Login</button>
+                    <button class="auth-tab" onclick="switchAuthTab('register')">Register</button>
+                </div>
+                
+                <form id="loginForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="loginEmail">Email or Phone</label>
+                        <input type="text" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </button>
+                    <div class="auth-links">
+                        <a href="#" onclick="showForgotPassword()">Forgot Password?</a>
+                    </div>
+                </form>
+                
+                <form id="registerForm" class="auth-form" style="display: none;">
+                    <div class="form-group">
+                        <label for="registerName">Full Name</label>
+                        <input type="text" id="registerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email Address</label>
+                        <input type="email" id="registerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPhone">Phone Number</label>
+                        <input type="tel" id="registerPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Password</label>
+                        <input type="password" id="registerPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" required>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="agreeTerms" required>
+                        <label for="agreeTerms">I agree to the Terms & Conditions</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i class="fas fa-user-plus"></i> Register
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌱 कृषिसागर</h3>
+                    <p>Dedicated to sustainable agriculture and spiritual farming practices. Serving farmers with premium quality products and expert guidance.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#seeds">Seeds</a></li>
+                        <li><a href="#fertilizers">Fertilizers</a></li>
+                        <li><a href="#pesticides">Pesticides</a></li>
+                        <li><a href="#anticides">Anticides</a></li>
+                        <li><a href="#organic">Organic Products</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#consultation">Expert Consultation</a></li>
+                        <li><a href="#delivery">Free Delivery</a></li>
+                        <li><a href="#support">24/7 Support</a></li>
+                        <li><a href="#training">Farmer Training</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Agricultural Hub, Farm City, India</p>
+                        <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                        <p><i class="fas fa-envelope"></i> info@krushisagar.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Sat: 9AM-6PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="spiritual-quote">
+                    <p class="sanskrit">"वसुधैव कुटुम्बकम्"</p>
+                    <p class="translation">The World is One Family</p>
+                </div>
+                <p>&copy; 2024 Krushisagar. All rights reserved. Made with 💚 for farmers.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Success/Error Messages -->
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
