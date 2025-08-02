@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divine Blessings - Spiritual E-Commerce</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-om"></i>
+                    <span>Divine Blessings</span>
+                </div>
+                
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#products">Products <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-menu">
+                                <a href="#idols">Idols & Statues</a>
+                                <a href="#jewelry">Sacred Jewelry</a>
+                                <a href="#books">Spiritual Books</a>
+                                <a href="#incense">Incense & Candles</a>
+                                <a href="#gemstones">Gemstones</a>
+                                <a href="#accessories">Accessories</a>
+                            </div>
+                        </li>
+                        <li><a href="#darshan">Online Darshan</a></li>
+                        <li><a href="#puja">Book Puja</a></li>
+                        <li><a href="#consultation">Consultation</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="nav-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search spiritual items..." id="searchInput">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="user-actions">
+                        <button class="auth-btn" id="loginBtn">
+                            <i class="fas fa-user"></i>
+                            <span>Login</span>
+                        </button>
+                        <button class="cart-btn" id="cartBtn">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="sanskrit">ॐ</span>
+                    Welcome to Divine Blessings
+                </h1>
+                <p class="hero-subtitle">Your Sacred Journey to Spiritual Enlightenment</p>
+                <p class="hero-description">
+                    Discover authentic spiritual products, book divine pujas, experience online darshan, 
+                    and connect with spiritual guides from the comfort of your home.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary">Explore Products</button>
+                    <button class="btn btn-secondary">Book Darshan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Services -->
+    <section class="quick-services">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Online Darshan</h3>
+                    <p>Experience divine darshan from sacred temples worldwide</p>
+                    <button class="btn btn-outline">View Schedule</button>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-pray"></i>
+                    </div>
+                    <h3>Book Puja</h3>
+                    <p>Schedule personalized pujas and rituals for your spiritual needs</p>
+                    <button class="btn btn-outline">Book Now</button>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Consultation</h3>
+                    <p>Get guidance from experienced spiritual counselors and astrologers</p>
+                    <button class="btn btn-outline">Consult Now</button>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <h3>Sacred Products</h3>
+                    <p>Browse our collection of authentic spiritual items and artifacts</p>
+                    <button class="btn btn-outline">Shop Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Products</h2>
+                <p>Handpicked spiritual items blessed with divine energy</p>
+            </div>
+            
+            <div class="product-categories">
+                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn" data-category="idols">Idols</button>
+                <button class="category-btn" data-category="jewelry">Jewelry</button>
+                <button class="category-btn" data-category="books">Books</button>
+                <button class="category-btn" data-category="incense">Incense</button>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Darshan Section -->
+    <section class="darshan-section" id="darshan">
+        <div class="container">
+            <div class="section-header">
+                <h2>Online Darshan</h2>
+                <p>Connect with divine energy through live temple darshan</p>
+            </div>
+            
+            <div class="darshan-grid">
+                <div class="darshan-card">
+                    <div class="darshan-image">
+                        <img src="images/temples/tirupati.jpg" alt="Tirupati Balaji">
+                        <div class="live-indicator">
+                            <span class="live-dot"></span>
+                            LIVE
+                        </div>
+                    </div>
+                    <div class="darshan-info">
+                        <h3>Tirupati Balaji</h3>
+                        <p>Lord Venkateswara Temple</p>
+                        <div class="darshan-time">
+                            <i class="fas fa-clock"></i>
+                            Next: 6:00 AM - 8:00 AM
+                        </div>
+                        <button class="btn btn-primary">Join Darshan</button>
+                    </div>
+                </div>
+                
+                <div class="darshan-card">
+                    <div class="darshan-image">
+                        <img src="images/temples/kedarnath.jpg" alt="Kedarnath">
+                    </div>
+                    <div class="darshan-info">
+                        <h3>Kedarnath</h3>
+                        <p>Lord Shiva Temple</p>
+                        <div class="darshan-time">
+                            <i class="fas fa-clock"></i>
+                            Next: 4:00 AM - 6:00 AM
+                        </div>
+                        <button class="btn btn-primary">Join Darshan</button>
+                    </div>
+                </div>
+                
+                <div class="darshan-card">
+                    <div class="darshan-image">
+                        <img src="images/temples/vaishno-devi.jpg" alt="Vaishno Devi">
+                    </div>
+                    <div class="darshan-info">
+                        <h3>Vaishno Devi</h3>
+                        <p>Mata Vaishno Devi Temple</p>
+                        <div class="darshan-time">
+                            <i class="fas fa-clock"></i>
+                            Next: 5:00 AM - 7:00 AM
+                        </div>
+                        <button class="btn btn-primary">Join Darshan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Puja Booking Section -->
+    <section class="puja-section" id="puja">
+        <div class="container">
+            <div class="section-header">
+                <h2>Book Sacred Pujas</h2>
+                <p>Schedule personalized rituals for prosperity, health, and spiritual growth</p>
+            </div>
+            
+            <div class="puja-grid">
+                <div class="puja-card">
+                    <div class="puja-icon">
+                        <i class="fas fa-om"></i>
+                    </div>
+                    <h3>Ganesh Puja</h3>
+                    <p>Remove obstacles and bring prosperity</p>
+                    <div class="puja-price">₹1,100</div>
+                    <button class="btn btn-primary">Book Now</button>
+                </div>
+                
+                <div class="puja-card">
+                    <div class="puja-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>Havan Ceremony</h3>
+                    <p>Purify your home and surroundings</p>
+                    <div class="puja-price">₹2,500</div>
+                    <button class="btn btn-primary">Book Now</button>
+                </div>
+                
+                <div class="puja-card">
+                    <div class="puja-icon">
+                        <i class="fas fa-lotus"></i>
+                    </div>
+                    <h3>Lakshmi Puja</h3>
+                    <p>Attract wealth and abundance</p>
+                    <div class="puja-price">₹1,500</div>
+                    <button class="btn btn-primary">Book Now</button>
+                </div>
+                
+                <div class="puja-card">
+                    <div class="puja-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>Surya Puja</h3>
+                    <p>Gain energy and vitality</p>
+                    <div class="puja-price">₹800</div>
+                    <button class="btn btn-primary">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Section -->
+    <section class="consultation-section" id="consultation">
+        <div class="container">
+            <div class="section-header">
+                <h2>Spiritual Consultation</h2>
+                <p>Get personalized guidance from experienced spiritual advisors</p>
+            </div>
+            
+            <div class="consultants-grid">
+                <div class="consultant-card">
+                    <div class="consultant-image">
+                        <img src="images/consultants/pandit1.jpg" alt="Pandit Rajesh Sharma">
+                        <div class="availability online">Online</div>
+                    </div>
+                    <div class="consultant-info">
+                        <h3>Pandit Rajesh Sharma</h3>
+                        <p>Vedic Astrologer & Spiritual Guide</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.9 (127 reviews)</span>
+                        </div>
+                        <div class="consultation-price">₹500/session</div>
+                        <button class="btn btn-primary">Book Consultation</button>
+                    </div>
+                </div>
+                
+                <div class="consultant-card">
+                    <div class="consultant-image">
+                        <img src="images/consultants/astrologer1.jpg" alt="Dr. Priya Nair">
+                        <div class="availability busy">Busy</div>
+                    </div>
+                    <div class="consultant-info">
+                        <h3>Dr. Priya Nair</h3>
+                        <p>Numerologist & Tarot Reader</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.8 (89 reviews)</span>
+                        </div>
+                        <div class="consultation-price">₹750/session</div>
+                        <button class="btn btn-secondary">Schedule Later</button>
+                    </div>
+                </div>
+                
+                <div class="consultant-card">
+                    <div class="consultant-image">
+                        <img src="images/consultants/guru1.jpg" alt="Swami Anandananda">
+                        <div class="availability online">Online</div>
+                    </div>
+                    <div class="consultant-info">
+                        <h3>Swami Anandananda</h3>
+                        <p>Meditation Master & Life Coach</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>5.0 (203 reviews)</span>
+                        </div>
+                        <div class="consultation-price">₹1,000/session</div>
+                        <button class="btn btn-primary">Book Consultation</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-om"></i>
+                        <span>Divine Blessings</span>
+                    </div>
+                    <p>Your trusted partner in spiritual journey. Authentic products, genuine services, and divine blessings.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#darshan">Online Darshan</a></li>
+                        <li><a href="#puja">Book Puja</a></li>
+                        <li><a href="#consultation">Consultation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#idols">Idols & Statues</a></li>
+                        <li><a href="#jewelry">Sacred Jewelry</a></li>
+                        <li><a href="#books">Spiritual Books</a></li>
+                        <li><a href="#incense">Incense & Candles</a></li>
+                        <li><a href="#gemstones">Gemstones</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                        <p><i class="fas fa-envelope"></i> info@divineblessings.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Spiritual Street, Sacred City, India</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Divine Blessings. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be dynamically loaded here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: ₹<span id="cartTotal">0</span></strong>
+            </div>
+            <button class="btn btn-primary btn-full" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Authentication Modal -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="authTitle">Login</h3>
+                <button class="close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="auth-forms">
+                <!-- Login Form -->
+                <form class="auth-form" id="loginForm">
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Login</button>
+                    <p class="auth-switch">Don't have an account? <a href="#" id="showSignup">Sign Up</a></p>
+                </form>
+                
+                <!-- Signup Form -->
+                <form class="auth-form" id="signupForm" style="display: none;">
+                    <div class="form-group">
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Confirm Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Sign Up</button>
+                    <p class="auth-switch">Already have an account? <a href="#" id="showLogin">Login</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>
